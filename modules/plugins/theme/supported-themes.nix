@@ -303,4 +303,17 @@ in {
 
     styles = ["hard" "medium" "soft"];
   };
+
+  ayu = {
+    setup = {
+      style ? "dark",
+      #transparent ? false,
+      ...
+    }:''
+        require("ayu").setup({})
+
+        vim.cmd.colorscheme("ayu-${style}")
+      '';
+    styles = ["dark" "mirage" "light"];
+  };
 }
