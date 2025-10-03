@@ -43,7 +43,7 @@
             self.homeManagerModules.nvf;
         };
 
-        hydraJobs = self.packages;
+        hydraJobs = {inherit (self.packages."x86_64-linux") nix maximal;};
 
         nixosModules = {
           nvf = import ./flake/modules/nixos.nix {inherit lib inputs;};
