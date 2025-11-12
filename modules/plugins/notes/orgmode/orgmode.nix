@@ -33,7 +33,7 @@ in {
 
     treesitter = {
       enable = mkEnableOption "Orgmode treesitter" // {default = config.vim.languages.enableTreesitter;};
-      orgPackage = mkGrammarOption pkgs "org";
+      orgPackage = mkGrammarOption pkgs "org-nvim";
     };
   };
 }
