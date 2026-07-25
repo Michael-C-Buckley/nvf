@@ -14,6 +14,8 @@
       shiftwidth = 4;
       expandtab = true;
       shiftround = true; # round indent to multiple of 'shiftwidth' for > and < command
+      foldlevel = 99;
+      foldlevelstart = 99;
     };
 
     lineNumberMode = "relNumber";
@@ -47,7 +49,10 @@
     spellcheck = {
       enable = lib.mkForce false;
       vim-dirtytalk.enable = false; # for programming words
-      ignoredFiletypes = ["toggleterm" "gitcommit"];
+      ignoredFiletypes = [
+        "toggleterm"
+        "gitcommit"
+      ];
     };
 
     terminal.toggleterm = {
