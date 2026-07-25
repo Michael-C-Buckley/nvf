@@ -18,6 +18,18 @@
 
     theme.enable = false; # I set ayu-dark manually
 
+    diagnostics.config = {
+      virtual_text = {
+        virt_text_pos = "eol_right_align";
+        source = "if_many";
+        prefix = "●";
+      };
+      float = {
+        source = true;
+        border = "rounded";
+      };
+    };
+
     ui = {
       borders.enable = true;
       illuminate.enable = true;
@@ -26,8 +38,14 @@
         enable = true;
         setupOpts.custom_colorcolumn = {
           nix = "110";
-          go = ["90" "130"];
-          python = ["80" "120"];
+          go = [
+            "90"
+            "130"
+          ];
+          python = [
+            "80"
+            "120"
+          ];
         };
       };
 

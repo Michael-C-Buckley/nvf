@@ -24,6 +24,5 @@ pkgs.mkShellNoCC {
     lefthook install
     git fetch
     git status --short --branch
-    export PATH="$PATH:/usr/local/bin"
   '';
 }

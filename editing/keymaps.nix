@@ -2,6 +2,12 @@
   vim.keymaps = [
     {
       mode = "n";
+      key = "q";
+      action = ":lua vim.diagnostic.open_float()<CR>";
+      silent = true;
+    }
+    {
+      mode = "n";
       key = "<M-w>";
       action = ":bdelete<CR>";
       silent = true;
@@ -20,7 +26,11 @@
     }
     {
       # Remove F1 for help
-      mode = ["n" "i" "v"];
+      mode = [
+        "n"
+        "i"
+        "v"
+      ];
       key = "<F1>";
       action = "<Nop>";
       silent = true;
