@@ -1,40 +1,17 @@
 {
   description = "NVF Flake";
 
-  inputs = {
-    nixpkgs.follows = "nvf/nixpkgs";
-
-    flake-parts = {
-      url = "github:hercules-ci/flake-parts";
-      inputs.nixpkgs-lib.follows = "nixpkgs";
-    };
-
-    nvf = {
-      url = "github:notashelf/nvf";
-      inputs = {
-        flake-compat.follows = "";
-        flake-parts.follows = "flake-parts";
-        ndg.follows = ""; # Documentation generator
-      };
-    };
+  outputs = {self} @ args: let
+    inputs = (import ./.tack) {overrides = args.tackOverrides or {};};
+    forAllSystems = inputs.nixpkgs.lib.genAttrs ["x86_64-linux" "aarch64-linux" "aarch64-darwin"];
+    p = forAllSystems (system: import inputs.nixpkgs {inherit system;});
+  in {
+    packages = forAllSystems (system: {
+      default = (inputs.nvf.lib.neovimConfiguration {
+        pkgs = p.${system};
+        modules = [./nvf.nix];
+      }).neovim;
+      nvf = self.packages.${system}.default;
+    });
   };
-
-  outputs = {
-    nixpkgs,
-    flake-parts,
-    ...
-  } @ inputs: let
-    inherit (nixpkgs.lib) hasPrefix lists;
-    inherit (nixpkgs.lib.fileset) toList fileFilter;
-
-    # Replacement for import-tree
-    mkImport = path: toList (fileFilter (f: f.hasExt "nix" && !(hasPrefix "_" f.name)) path);
-  in
-    flake-parts.lib.mkFlake {inherit inputs;} {
-      systems = ["x86_64-linux" "aarch64-linux" "aarch64-darwin"];
-      imports = lists.flatten [
-        flake-parts.flakeModules.modules
-        (mkImport ./nvf)
-      ];
-    };
 }

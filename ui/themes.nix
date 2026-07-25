@@ -1,6 +1,5 @@
-{
-  flake.modules.nvf.themes = {pkgs, ...}: let
-    inherit (pkgs) vimPlugins;
+{pkgs, ...}: let
+    vimPlugins = pkgs.vimPlugins;
   in {
     vim = {
       extraPlugins = {
@@ -20,5 +19,4 @@
         "tokyonight.nvim".package = vimPlugins.tokyonight-nvim;
       };
     };
-  };
 }

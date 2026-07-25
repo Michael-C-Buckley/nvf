@@ -1,0 +1,11 @@
+[shorturls]
+gh = "github:{path}"
+
+[all_follow]
+nixpkgs = "nixpkgs"
+
+[inputs.nixpkgs]
+url = "gh:nixos/nixpkgs/nixpkgs-unstable"
+
+[inputs.nvf]
+url = "gh:notashelf/nvf"
