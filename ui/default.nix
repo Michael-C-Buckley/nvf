@@ -18,17 +18,25 @@
 
     theme.enable = false; # I set ayu-dark manually
 
-    diagnostics.config = {
-      virtual_text = {
-        virt_text_pos = "eol_right_align";
-        source = "if_many";
-        prefix = "●";
-      };
-      float = {
-        source = true;
-        border = "rounded";
-      };
-    };
+    luaConfigPost = ''
+      vim.diagnostic.config({
+        virtual_text = {
+          prefix = "●",
+          source = "if_many",
+          spacing = 2,
+          virt_text_pos = "eol",
+          virt_text_win_col = 89,
+          format = function(diagnostic)
+            return diagnostic.message:match("^[^\\n]+")
+          end,
+        },
+        float = {
+          border = "rounded",
+          source = true,
+        },
+        severity_sort = true,
+      })
+    '';
 
     ui = {
       borders.enable = true;

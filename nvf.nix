@@ -9,9 +9,9 @@
       matchtime = 2; # briefly jump to a matching bracket for 0.2s
       exrc = true; # use project specific vimrc
       smartindent = true;
-      softtabstop = 4;
-      tabstop = 4;
-      shiftwidth = 4;
+      softtabstop = 2;
+      tabstop = 2;
+      shiftwidth = 2;
       expandtab = true;
       shiftround = true; # round indent to multiple of 'shiftwidth' for > and < command
       foldlevel = 99;

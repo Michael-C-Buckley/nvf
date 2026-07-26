@@ -2,7 +2,7 @@
   vim.keymaps = [
     {
       mode = "n";
-      key = "q";
+      key = "<leader>d";
       action = ":lua vim.diagnostic.open_float()<CR>";
       silent = true;
     }

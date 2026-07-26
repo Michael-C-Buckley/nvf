@@ -1,6 +1,5 @@
 {
   vim = {
-
     languages = {
       enableFormat = false;
       enableTreesitter = true;
@@ -21,7 +20,7 @@
       nix = {
         enable = true;
         extraDiagnostics = {
-          enable = true;
+          enable = false;
           types = ["deadnix" "statix"];
         };
         format = {

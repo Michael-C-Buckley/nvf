@@ -9,13 +9,13 @@
       "aarch64-darwin"
     ];
     p = forAllSystems (system: import inputs.nixpkgs {inherit system;});
+    
+    mkNvf = pkgs: inputs.nvf.lib.neovimConfiguration {inherit pkgs; modules = [./nvf.nix];};
   in {
+    # For Config Sampling
+    config = mkNvf (p.x86_64-linux);
     packages = forAllSystems (system: let pkgs = p.${system}; in {
-      default =
-        (inputs.nvf.lib.neovimConfiguration {
-          inherit pkgs;
-          modules = [./nvf.nix];
-        }).neovim;
+      default = (mkNvf pkgs).neovim;
       nvf = pkgs.writeShellApplication {
         name = "nvf";
         text = ''
