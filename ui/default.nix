@@ -9,7 +9,13 @@
 
   vim = {
     comments.comment-nvim.enable = true;
-    statusline.lualine.enable = true;
+    statusline.lualine = {
+      enable = true;
+      integrations.breadcrumbs = {
+        navbuddy.enable = true;
+        nvim-navic.enable = true;
+      };
+    };
     tabline.nvimBufferline.enable = true;
 
     # Navigation
@@ -72,11 +78,6 @@
       };
 
       noice.enable = true;
-      breadcrumbs = {
-        enable = true;
-        lualine.winbar.enable = true;
-        navbuddy.enable = true;
-      };
     };
 
     visuals = {
