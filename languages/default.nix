@@ -1,6 +1,7 @@
 {
   imports = [
     ./nix.nix
+    ./python.nix
   ];
 
   vim = {
@@ -9,13 +10,6 @@
       enableExtraDiagnostics = true;
       bash.enable = true;
       yaml.enable = true;
-
-      python = {
-        enable = true;
-        dap.enable = true;
-        lsp.enable = true;
-        treesitter.enable = true;
-      };
     };
     treesitter = {
       enable = true;

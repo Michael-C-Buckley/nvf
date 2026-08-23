@@ -29,5 +29,9 @@
         };
       };
     };
+
+    ui.smartcolumn.setupOpts.custom_colorcolumn.nix = [
+      "110"
+    ];
   };
 }

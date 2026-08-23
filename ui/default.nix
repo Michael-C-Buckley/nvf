@@ -46,24 +46,11 @@
       borders.enable = true;
       illuminate.enable = true;
       fastaction.enable = true;
-      smartcolumn = {
-        enable = true;
-        setupOpts.custom_colorcolumn = {
-          nix = "110";
-          go = [
-            "90"
-            "130"
-          ];
-          python = [
-            "80"
-            "120"
-          ];
-        };
-      };
+      noice.enable = true;
+      smartcolumn.enable = true;
 
-      # Neat but distracting so I've disabled it
       colorizer = {
-        enable = false;
+        enable = true;
         setupOpts.filetypes = {
           "*" = {
             mode = "background";
@@ -74,8 +61,6 @@
           };
         };
       };
-
-      noice.enable = true;
     };
 
     visuals = {
