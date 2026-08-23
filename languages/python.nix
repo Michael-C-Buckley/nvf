@@ -6,9 +6,9 @@
       lsp.enable = true;
       treesitter.enable = true;
     };
+    ui.smartcolumn.setupOpts.custom_colorcolumn.python = [
+      "80"
+      "120"
+    ];
   };
-  ui.smartcolumn.setupOpts.custom_colorcolumn.python = [
-    "80"
-    "120"
-  ];
 }

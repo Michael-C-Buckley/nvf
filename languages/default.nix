@@ -20,9 +20,9 @@
     lsp = {
       enable = true;
       formatOnSave = false;
-      lightbulb.enable = true;
-      trouble.enable = true;
-      otter-nvim.enable = true;
+      lightbulb.enable = true; # Shows a lightbulb when code actions are available
+      trouble.enable = true; # Interactive menu for examining diagnostics
+      otter-nvim.enable = true; # Runs proper LSP inside codeblocks
     };
   };
 }
