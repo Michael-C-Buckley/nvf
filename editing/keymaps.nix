@@ -35,5 +35,11 @@
       action = "<Nop>";
       silent = true;
     }
+    {
+      mode = "n";
+      key = "-";
+      action = "<CMD>Oil<CR>";
+      silent = true;
+    }
   ];
 }
