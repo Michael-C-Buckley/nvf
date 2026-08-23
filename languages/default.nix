@@ -1,5 +1,7 @@
 {
   imports = [
+    ./diagnostics.nix
+    ./keymaps.nix
     ./nix.nix
     ./python.nix
   ];
@@ -21,7 +23,6 @@
       enable = true;
       formatOnSave = false;
       lightbulb.enable = true; # Shows a lightbulb when code actions are available
-      trouble.enable = true; # Interactive menu for examining diagnostics
       otter-nvim.enable = true; # Runs proper LSP inside codeblocks
     };
   };

@@ -1,8 +1,14 @@
 {pkgs, ...}: {
   vim = {
-    startPlugins = with pkgs.vimPlugins; [
-      transparent-nvim
-    ];
+    # Suppresses starting it automatically on nvim launch
+    extraPlugins.transparent-nvim = {
+      package = pkgs.vimPlugins.transparent-nvim;
+      setup =
+        # lua
+        ''
+          require("transparent")
+        '';
+    };
     keymaps = [
       {
         mode = "n";

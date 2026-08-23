@@ -7,7 +7,11 @@
   ];
 
   vim = {
-    mini.starter.enable = true;
+    # No dashboard and suppress the default splash screen
+    luaConfigRC.options = ''
+      vim.opt.shortmess:append("I")
+    '';
+
     comments.comment-nvim.enable = true;
     statusline.lualine = {
       enable = true;
@@ -21,26 +25,6 @@
     # Navigation
     projects.project-nvim.enable = true;
     navigation.harpoon.enable = true;
-
-    luaConfigPost = ''
-      vim.diagnostic.config({
-        virtual_text = {
-          prefix = "●",
-          source = "if_many",
-          spacing = 2,
-          virt_text_pos = "eol",
-          virt_text_win_col = 89,
-          format = function(diagnostic)
-            return diagnostic.message:match("^[^\\n]+")
-          end,
-        },
-        float = {
-          border = "rounded",
-          source = true,
-        },
-        severity_sort = true,
-      })
-    '';
 
     ui = {
       borders.enable = true;

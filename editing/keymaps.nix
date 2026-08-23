@@ -2,12 +2,6 @@
   vim.keymaps = [
     {
       mode = "n";
-      key = "<leader>d";
-      action = ":lua vim.diagnostic.open_float()<CR>";
-      silent = true;
-    }
-    {
-      mode = "n";
       key = "<M-w>";
       action = ":bdelete<CR>";
       silent = true;
@@ -39,12 +33,6 @@
       mode = "n";
       key = "-";
       action = "<CMD>Oil<CR>";
-      silent = true;
-    }
-    {
-      mode = "n";
-      key = "f<leader>";
-      action = ":lua vim.lsp.buf.format()<CR>";
       silent = true;
     }
   ];
