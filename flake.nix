@@ -28,7 +28,7 @@
       };
   in {
     # For Config Sampling
-    config = mkNvf (p.x86_64-linux);
+    config = mkNvf p.x86_64-linux;
     packages = forAllSystems (system: let
       pkgs = p.${system};
     in {
@@ -36,9 +36,11 @@
       nvf = pkgs.writeShellApplication {
         name = "nvf";
         text = ''
-          exec "${pkgs.lib.getExe self.packages.${system}.default}" "@";
+          exec "${pkgs.lib.getExe self.packages.${system}.default}" "$@";
         '';
       };
+      # Not used internally, but exposed in case I wanted it
+      vimPlugins = import ./vimPlugins.nix {inherit pkgs;};
     });
   };
 }

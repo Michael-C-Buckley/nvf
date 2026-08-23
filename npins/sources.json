@@ -1,0 +1,34 @@
+{
+  "pins": {
+    "aquavium.nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "t-b-t-nchos",
+        "repo": "aquavium.nvim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "d007badfa5920cb50e136d30a3edf4342093d6b5",
+      "url": "https://github.com/t-b-t-nchos/aquavium.nvim/archive/d007badfa5920cb50e136d30a3edf4342093d6b5.tar.gz",
+      "hash": "sha256-AtvAOiPqHDm49/bv8LovKPiMMJ/Yf6m24yOrOzZ8qnk="
+    },
+    "oasis.nvim": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "uhs-robert",
+        "repo": "oasis.nvim"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v6.1.0",
+      "revision": "bd932eca517796863d7682478cccdb7a9a1f3763",
+      "url": "https://api.github.com/repos/uhs-robert/oasis.nvim/tarball/refs/tags/v6.1.0",
+      "hash": "sha256-FxuaOxtoePmQ2ySy06kAuedWS5SrENrQttqc7c8XI6E="
+    }
+  },
+  "version": 8
+}

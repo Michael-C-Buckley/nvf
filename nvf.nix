@@ -32,7 +32,6 @@
       writebackup = false;
       swapfile = false;
       undofile = true;
-      undodir = "vim.fn.expand('~/.vim/undodir')";
       updatetime = 300;
       ttimeoutlen = 0;
       # Behavior

@@ -1,6 +1,5 @@
 {
   imports = [
-    ./alpha.nix
     ./fzflua.nix
     ./neotree.nix
     ./themes.nix
@@ -8,6 +7,7 @@
   ];
 
   vim = {
+    mini.starter.enable = true;
     comments.comment-nvim.enable = true;
     statusline.lualine = {
       enable = true;
