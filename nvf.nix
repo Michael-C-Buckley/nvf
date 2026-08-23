@@ -1,6 +1,7 @@
 {lib, ...}: {
   imports = [
     ./editing
+    ./languages
     ./ui
   ];
   vim = {

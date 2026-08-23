@@ -41,5 +41,11 @@
       action = "<CMD>Oil<CR>";
       silent = true;
     }
+    {
+      mode = "n";
+      key = "f<leader>";
+      action = ":lua vim.lsp.buf.format()<CR>";
+      silent = true;
+    }
   ];
 }
