@@ -8,12 +8,20 @@
     key = "<leader>${keys}";
     action = ":FzfLua ${action}<CR>";
   };
+  excludes =
+    "--exclude "
+    + (builtins.concatStringsSep " --exclude " [
+      ".git"
+      ".jj"
+      ".direnv"
+      ".arc"
+    ]);
 in {
   vim = {
     fzf-lua = {
       enable = true;
       setupOpts.files = {
-        cmd = "${lib.getExe pkgs.fd} --type f --hidden --follow --exclude .git --exclude .direnv --exclude .arc";
+        cmd = "${lib.getExe pkgs.fd} --type f --hidden --follow ${excludes}";
       };
     };
 
