@@ -41,8 +41,8 @@
       };
       # Not used internally, but exposed in case I wanted it
       vimPlugins = import ./vimPlugins.nix {inherit pkgs;};
-      # The shell exposed as a package, for CI and convenience
-      shell = import ./shell.nix {inherit pkgs;};
+      # A buildEnv of shell tools (unlike shell.nix, this populates result/bin), for CI
+      shell = import ./shellEnv.nix {inherit pkgs;};
     });
   };
 }
