@@ -4,6 +4,7 @@
     ./neotree.nix
     ./themes.nix
     ./transparent.nix
+    ./lines.nix
   ];
 
   vim = {
@@ -13,14 +14,6 @@
     '';
 
     comments.comment-nvim.enable = true;
-    statusline.lualine = {
-      enable = true;
-      integrations.breadcrumbs = {
-        navbuddy.enable = true;
-        nvim-navic.enable = true;
-      };
-    };
-    tabline.nvimBufferline.enable = true;
 
     # Navigation
     projects.project-nvim.enable = true;
