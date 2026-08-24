@@ -4,6 +4,7 @@
     ./keymaps.nix
     ./nix.nix
     ./python.nix
+    ./lua.nix
   ];
 
   vim = {
