@@ -58,10 +58,6 @@
       outline.aerial-nvim.enable = true;
       mkdir.enable = true;
       nix-develop.enable = true;
-      oil-nvim = {
-        enable = true;
-        gitStatus.enable = true;
-      };
       motion.leap.enable = true;
     };
 

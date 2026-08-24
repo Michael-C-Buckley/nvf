@@ -1,39 +1,33 @@
-{
+let
+  allModes = [
+    "n"
+    "i"
+    "v"
+    "c"
+    "t"
+    "o"
+    "x"
+    "s"
+  ];
+  mkBind = mode: key: action: {
+    inherit mode key action;
+    silent = true;
+  };
+  mkNBind = key: action: mkBind "n" key action;
+  mkVBind = key: action: mkBind "v" key action;
+  mkAllBind = key: action: mkBind allModes key action;
+in {
   vim.keymaps = [
-    {
-      mode = "n";
-      key = "<M-w>";
-      action = ":bdelete<CR>";
-      silent = true;
-    }
-    {
-      mode = "n";
-      key = "<M-,>";
-      action = ":bprevious<CR>";
-      silent = true;
-    }
-    {
-      mode = "n";
-      key = "<M-.>";
-      action = ":bnext<CR>";
-      silent = true;
-    }
-    {
-      # Remove F1 for help
-      mode = [
-        "n"
-        "i"
-        "v"
-      ];
-      key = "<F1>";
-      action = "<Nop>";
-      silent = true;
-    }
-    {
-      mode = "n";
-      key = "-";
-      action = "<CMD>Oil<CR>";
-      silent = true;
-    }
+    # Buffer Navigation
+    (mkNBind "<M-w>" ":bdelete<CR>")
+    (mkNBind "<M-,>" ":bprevious<CR>")
+    (mkNBind "<M-.>" ":bnext<CR>")
+    # Save/Quit
+    (mkAllBind "<C-S>" "<cmd>write<cr>")
+    # Remove F1 for help
+    (mkAllBind "<F1>" "<Nop>")
+    # Move lines
+    (mkVBind "J" ":m '>+1<cr>gv=gv")
+    (mkVBind "K" ":m '<-2<cr>gv=gv")
   ];
 }
