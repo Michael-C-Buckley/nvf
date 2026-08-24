@@ -1,0 +1,33 @@
+---
+name: Nvim Check
+"on":
+  push:
+    branches: [master, main]
+  workflow_dispatch:
+jobs:
+  nvim-checks:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install Nix
+        uses: cachix/install-nix-action@v27
+        with:
+          nix_path: nixpkgs=flake:nixpkgs
+      - name: Add shell tools to PATH
+        run: |
+          nix build .#shell
+          echo "$(readlink -f result)/bin" >> "$GITHUB_PATH"
+      - name: Check for dead code with deadnix
+        run: deadnix --fail --exclude _sources/ .
+      - name: Check for antipatterns with statix
+        run: statix check -c .config/statix.toml .
+      - name: Check spelling with typos
+        run: typos -c .config/typos.toml .
+      - name: Check formatting with treefmt
+        run: treefmt --config-file .config/treefmt.toml --fail-on-change .
+      - name: Check Flake
+        run: nix flake check
+      - name: Check Nvim
+        run: nix run .#nvf -- --headless "+qa"

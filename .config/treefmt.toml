@@ -1,4 +1,5 @@
-excludes = ["*.lock", ".gitignore"]
+# Stick with the main project files for now
+excludes = ["*.lock", ".gitignore", ".envrc", "npins/**", ".config/**", ".github/**"]
 on-unmatched = "warn"
 
 [formatter.alejandra]
