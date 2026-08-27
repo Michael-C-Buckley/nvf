@@ -2,6 +2,7 @@
   imports = [
     ./diagnostics.nix
     ./keymaps.nix
+    ./go.nix
     ./nix.nix
     ./python.nix
     ./lua.nix
