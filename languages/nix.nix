@@ -3,20 +3,14 @@
     languages.nix = {
       enable = true;
       extraDiagnostics = {
-        enable = false;
-        types = [
-          "deadnix"
-          "statix"
-        ];
+        enable = true;
+        types = ["statix"];
       };
       format = {
         enable = true;
         type = ["alejandra"];
       };
-      lsp.servers = [
-        "nil"
-        "nixd"
-      ];
+      lsp.servers = ["nil"];
     };
     lsp.servers = {
       nil = {
