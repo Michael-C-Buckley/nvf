@@ -1,4 +1,4 @@
-{lib, ...}: {
+{ lib, ... }: {
   imports = [
     ./editing
     ./languages
@@ -69,7 +69,6 @@
 
     spellcheck = {
       enable = lib.mkForce false;
-      vim-dirtytalk.enable = false; # for programming words
       ignoredFiletypes = [
         "toggleterm"
         "gitcommit"
