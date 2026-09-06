@@ -2,8 +2,8 @@
 excludes = ["*.lock", ".gitignore", ".envrc", "npins/**", ".config/**", ".github/**"]
 on-unmatched = "warn"
 
-[formatter.alejandra]
-command = "alejandra"
+[formatter.nixfmt]
+command = "nixfmt"
 includes = ["*.nix"]
 
 [formatter.mdformat]
