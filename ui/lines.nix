@@ -1,6 +1,7 @@
 let
   useMini = false;
-in {
+in
+{
   vim = {
     mini = {
       statusline.enable = useMini;

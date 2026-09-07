@@ -2,7 +2,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   vim = {
     autocomplete = {
       enableSharedCmpSources = true;

@@ -1,11 +1,11 @@
 {
-  pkgs ? import <nixpkgs> {},
-  extraPkgs ? [],
+  pkgs ? import <nixpkgs> { },
+  extraPkgs ? [ ],
 }:
 pkgs.mkShellNoCC {
   name = "default";
   buildInputs = [
-    (import ./shellEnv.nix {inherit pkgs extraPkgs;})
+    (import ./shellEnv.nix { inherit pkgs extraPkgs; })
   ];
 
   shellHook = ''

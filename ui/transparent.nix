@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   vim = {
     # Suppresses starting it automatically on nvim launch
     extraPlugins.transparent-nvim = {

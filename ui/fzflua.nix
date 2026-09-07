@@ -2,7 +2,8 @@
   pkgs,
   lib,
   ...
-}: let
+}:
+let
   mkFzfBind = keys: action: {
     mode = "n";
     key = "<leader>${keys}";
@@ -16,7 +17,8 @@
       ".direnv"
       ".arc"
     ]);
-in {
+in
+{
   vim = {
     fzf-lua = {
       enable = true;

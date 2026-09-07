@@ -1,6 +1,8 @@
-{pkgs, ...}: let
-  localPlugins = import ../vimPlugins.nix {inherit pkgs;};
-in {
+{ pkgs, ... }:
+let
+  localPlugins = import ../vimPlugins.nix { inherit pkgs; };
+in
+{
   vim = {
     extraPlugins = {
       # Becomes the default theme
