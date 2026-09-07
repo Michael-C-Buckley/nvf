@@ -16,7 +16,8 @@ let
   mkNBind = key: action: mkBind "n" key action;
   mkVBind = key: action: mkBind "v" key action;
   mkAllBind = key: action: mkBind allModes key action;
-in {
+in
+{
   vim.keymaps = [
     # Buffer Navigation
     (mkNBind "<M-w>" ":bdelete<CR>")
@@ -29,5 +30,7 @@ in {
     # Move lines
     (mkVBind "J" ":m '>+1<cr>gv=gv")
     (mkVBind "K" ":m '<-2<cr>gv=gv")
+    # Insert tab characters because tab key is not reliable for it
+    (mkBind "i" "<A-t>" "<C-v><Tab>")
   ];
 }
