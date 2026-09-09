@@ -24,10 +24,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v6.1.0",
-      "revision": "bd932eca517796863d7682478cccdb7a9a1f3763",
-      "url": "https://api.github.com/repos/uhs-robert/oasis.nvim/tarball/refs/tags/v6.1.0",
-      "hash": "sha256-FxuaOxtoePmQ2ySy06kAuedWS5SrENrQttqc7c8XI6E="
+      "version": "v6.1.1",
+      "revision": "08f04897949b801ca503626c09e9131d0caad0b6",
+      "url": "https://api.github.com/repos/uhs-robert/oasis.nvim/tarball/refs/tags/v6.1.1",
+      "hash": "sha256-Xf9nGBnD+h/9x6t2C3MdAvc0XtgMG6MkfHCb4Q34TnA="
     }
   },
   "version": 8
